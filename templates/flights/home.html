@@ -1,0 +1,12 @@
+{% extends 'flights/base.html' %}
+{% block content %}
+  <div class="card">
+    <h2>Zona de inicio</h2>
+    <p>Selecciona una opción:</p>
+    <ul>
+      <li><a class="btn" href="{% url 'flights:create' %}">Registrar vuelos</a></li>
+      <li><a class="btn" href="{% url 'flights:list' %}">Listar vuelos</a></li>
+      <li><a class="btn" href="{% url 'flights:stats' %}">Estadísticas de vuelos</a></li>
+    </ul>
+  </div>
+{% endblock %}

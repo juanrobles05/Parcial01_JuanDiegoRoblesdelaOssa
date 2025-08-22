@@ -1,0 +1,29 @@
+{% extends 'flights/base.html' %}
+{% block content %}
+  <div class="card">
+    <h2>Listado de vuelos</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Nombre</th><th>Tipo</th><th>Precio</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for f in flights %}
+          <tr>
+            <td>{{ f.id }}</td>
+            <td class="{% if f.flight_type == 'Internacional' %}name-bold{% endif %}">
+              {{ f.name }}
+            </td>
+            <td>{{ f.flight_type }}</td>
+            <td class="{% if f.flight_type == 'Nacional' %}price-blue{% endif %}">
+              ${{ f.price }}
+            </td>
+          </tr>
+        {% empty %}
+          <tr><td colspan="4">No hay vuelos registrados.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'flights/base.html' %}
+{% block content %}
+  <div class="card">
+    <h2>Estadísticas de vuelos</h2>
+    <p><strong>{{ n_national }}</strong> Nacional(es), <strong>{{ n_international }}</strong> Internacional(es)</p>
+
+    <p>
+      Precio promedio de vuelos nacionales:
+      {% if avg_national %}
+        <strong>${{ avg_national|floatformat:2 }}</strong>
+      {% else %}
+        <em>No hay vuelos nacionales registrados.</em>
+      {% endif %}
+    </p>
+  </div>
+{% endblock %}

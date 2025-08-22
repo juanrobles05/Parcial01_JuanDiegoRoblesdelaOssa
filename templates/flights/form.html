@@ -1,0 +1,27 @@
+{% extends 'flights/base.html' %}
+{% block content %}
+  <div class="card">
+    <h2>Registrar vuelo</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {{ form.non_field_errors }}
+      <div>
+        <label>Nombre</label><br>
+        {{ form.name }}
+        {{ form.name.errors }}
+      </div>
+      <div>
+        <label>Tipo</label><br>
+        {{ form.flight_type }}
+        {{ form.flight_type.errors }}
+      </div>
+      <div>
+        <label>Precio</label><br>
+        {{ form.price }}
+        {{ form.price.errors }}
+      </div>
+      <br>
+      <button class="btn" type="submit">Guardar</button>
+    </form>
+  </div>
+{% endblock %}

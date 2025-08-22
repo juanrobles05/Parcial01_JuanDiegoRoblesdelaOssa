@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Rionegro Flights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <header>
+    <h1>Rionegro Flights</h1>
+    <nav>
+      <a href="{% url 'flights:home' %}">Inicio</a>
+      <a href="{% url 'flights:create' %}">Registrar vuelos</a>
+      <a href="{% url 'flights:list' %}">Listar vuelos</a>
+      <a href="{% url 'flights:stats' %}">Estadísticas de vuelos</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
